@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-settings>
+	<settings defaultResolver="chain" />
+	<credentials host="artifactory.homedepot.com" realm="Artifactory Realm" username="" passwd="" />
+	<resolvers>
+		<chain name="chain">
+			<ibiblio name="ibiblio" m2compatible="true" root="http://artifactory.homedepot.com/libs-snapshot" usepoms="true" />
+			<url name="url" m2compatible="true">
+				<ivy pattern="http://artifactory.homedepot.com/libs-release/[organisation]/[module]/[module]-[revision](-[classifier]).xml" />
+				<ivy pattern="http://artifactory.homedepot.com/libs-release/[organisation]/[module]/[revision]/[module]-[revision](-[classifier]).[ext]" />
+				<artifact pattern="http://artifactory.homedepot.com/libs-release/[organisation]/[module]/[revision]/[module].[revision](-[classifier]).[ext]" />
+				<artifact pattern="http://artifactory.homedepot.com/libs-release/[organisation]/[module]/[revision]/[module]_[revision](-[classifier]).[ext]" />
+				<artifact pattern="http://artifactory.homedepot.com/libs-release/[organisation]/[module]/[revision]/[module](-[classifier]).[ext]" />
+				<artifact pattern="http://artifactory.homedepot.com/libs-release/[organisation]/[module](-[classifier]).[ext]" />
+			</url>
+		</chain>
+	</resolvers>
+</ivy-settings>

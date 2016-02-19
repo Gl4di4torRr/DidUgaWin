@@ -1,0 +1,16 @@
+
+.main{
+ 	position: fixed;
+    top: 25%;
+    left: 38%;
+}
+
+.ugaWon{
+	color: green;
+	font-size: 150px;
+}
+
+.ugaLost{
+	color: red;
+	font-size: 150px;
+}
