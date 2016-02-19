@@ -35,10 +35,6 @@
 	</configurations>
 	
 	<dependencies defaultconf="compile" defaultconfmapping="*->default">
-		<!--COMPILE-->
-		<!-- Compile dependencies are available in all classpaths of a project. -->
-		<!-- These dependencies are included in the war's WEB-INF/lib and are propagated to dependent projects. -->
-		<!-- This is the default config and is used if no config is specified. -->
 		<dependency org="org.jsoup" name="jsoup" rev="1.7.2"/>
 		<dependency name="jersey-core" org="com.sun.jersey" rev="1.19"/>
 		<dependency name="jersey-server" org="com.sun.jersey" rev="1.19"/>
@@ -46,31 +42,9 @@
 		<dependency name="jersey-json" org="com.sun.jersey" rev="1.19"/>
 		<dependency name="gson" org="com.google.code.gson" rev="2.3"/>
 		
-		<!--PROVIDED-->
-		<!-- This is much like compile, but indicates you expect the JDK or the tomcat container to provide the dependency at runtime. -->
-		<!-- This scope is only available on the compilation and test classpaths, and is not transitive. -->
-		<!-- NOTE: You must add conf="provided" to the dependency -->
+
 		<dependency org="com.homedepot.ta.aa.arch" name="tomcatX-grid" rev="7.+" conf="provided" >
     		<artifact name="tomcatX-grid" ext="jar"/>
-		</dependency>
-
-		<!--RUNTIME-->
-		<!-- This scope indicates that the dependency is not required for compilation, but is for execution. -->
-		<!-- It is in the runtime and test classpaths, but not the compile classpaths and is not transitive. -->
-		<!-- NOTE: You must add conf="runtime" to the dependency -->
-		
-
-		<!--TEST-->
-		<!-- Include individual libraries needed from the repository for test -->
-		<!-- This scope is only available on the test compile and test classpath, and is not transitive. -->
-		<!-- NOTE: You must add conf="test" to the dependency -->
-		<dependency org="junit" name="junit" rev="4.0" conf="test">
-			<artifact name="junit" ext="jar"/>
-		</dependency>
-		<dependency org="net.sourceforge.cobertura" name="cobertura" rev="2.0.3" conf="test">
-			<artifact name="cobertura" ext="jar"/>
-			<exclude org="org.apache.ant" />
-			<exclude org="log4j" />
 		</dependency>
 		
 	</dependencies>
