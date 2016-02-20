@@ -1,2 +1,2 @@
-web: java -Dserver.port=$PORT $JAVA_OPTS -jar target/ugawins-0.0.1-SNAPSHOT.jar
+web: java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/ugawins-0.0.1-SNAPSHOT.jar
 
