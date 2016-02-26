@@ -24,6 +24,8 @@ public class UGAController {
     @RequestMapping(path = "/wins", method = RequestMethod.GET)
     public UgaWins getWins() throws IOException {
         String gameOutCome = espnScraper.lastSeasonGameOutcome();
-        return new UgaWins(gameOutCome);
+        String score = "L 55-7";
+        String link = "http://espn.go.com/ncb/recap?gameId=400839775&version=mobile&teamId=150";
+        return new UgaWins(gameOutCome, score, link);
     }
 }

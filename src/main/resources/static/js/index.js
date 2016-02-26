@@ -12,6 +12,12 @@ $( function( ) {
 			else if(data.didUgaWin === "L"){
 				$("#ugaLost").show();
 			}
+
+			var element = document.getElementById("score");
+			element.innerHTML = data.score;
+			element.setAttribute("href", data.link);
+			//$("#score").text(data.score);
+			//$("#score").setAttribute("href", data.link);
 			
 		},
 		error: function( data ) {

@@ -30,7 +30,8 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-actuator')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.jsoup:jsoup:1.8.3')
-	testCompile('org.springframework.boot:spring-boot-starter-test') 
+	compile("org.projectlombok:lombok:1.16.6")
+	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
 
