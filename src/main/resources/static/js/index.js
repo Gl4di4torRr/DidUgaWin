@@ -1,4 +1,11 @@
 $( function( ) {
+	/*TODO:
+		1. Wrap in framework if looking to expand
+		2. Promise with loading icon
+		3. Social Media links
+		4. Prosper
+	 */
+
 	$("#ugaWon").hide();
 	$("#ugaLost").hide();
 	$.ajax( {
@@ -16,9 +23,6 @@ $( function( ) {
 			var element = document.getElementById("score");
 			element.innerHTML = data.score;
 			element.setAttribute("href", data.link);
-			//$("#score").text(data.score);
-			//$("#score").setAttribute("href", data.link);
-			
 		},
 		error: function( data ) {
 			alert("error = " + data);
