@@ -41,7 +41,8 @@ public class ESPNScraper {
                     .getElementsByTag("table")
                     .get(0)
                     .getElementsByTag("tr");
-            for (Element elem : gamesPlayed) {
+            for (int i = gamesPlayed.size() -1; i >= 0; i--) {
+                Element elem = gamesPlayed.get(i);
                 Elements loss = elem.getElementsByClass("loss");
                 Elements wins = elem.getElementsByClass("win");
 
@@ -51,6 +52,9 @@ public class ESPNScraper {
                             .getAllElements().get(0);
                     score = scoreLinkObj.childNode(0).toString();
                     link = scoreLinkObj.attr("href");
+
+                    UgaWins ugaWinsObject = new UgaWins(gameOutcome, score, link);
+                    return ugaWinsObject;
                 } else if(wins.size() > 0){
                     gameOutcome = "W";
                     Element scoreLinkObj = elem.getElementsByClass("score").get(0).getElementsByTag("a").get(0).getElementsByAttribute("href").get(0)
@@ -58,15 +62,11 @@ public class ESPNScraper {
                     score = scoreLinkObj.childNode(0).toString();
                     link = espnScorePrefix + scoreLinkObj.attr("href");
 
+                    UgaWins ugaWinsObject = new UgaWins(gameOutcome, score, link);
+                    return ugaWinsObject;
                 }
             }
-
-            if(gameOutcome.equals("")){
-                return null;
-            } else {
-                UgaWins ugaWinsObject = new UgaWins(gameOutcome, score, link);
-                return ugaWinsObject;
-            }
+            return null;
         }
         catch (MalformedURLException e) {
             throw e;
