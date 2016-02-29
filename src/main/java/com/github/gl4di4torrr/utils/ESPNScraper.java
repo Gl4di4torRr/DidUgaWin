@@ -20,7 +20,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ESPNScraper {
+    //Football
     private static final String espnUGA = "http://espn.go.com/college-football/team/schedule/_/id/61";
+    // Basketball
+    // private static final String espnUGA = "http://espn.go.com/mens-college-basketball/team/schedule/_/id/61";
     private static final String espnScorePrefix = "http://espn.go.com";
     private URLConnection conn;
     private String html = "";
