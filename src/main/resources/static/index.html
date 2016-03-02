@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Did UGA Win?</title>
+	<head>
+		<meta charset="UTF-8">
+		<title>Did UGA Win?</title>
 
-<link rel="stylesheet" href="css/vendor/bootstrap.min.css">
-<link rel="stylesheet" href="css/vendor/bootstrap-theme.min.css">
-<link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="images/UGA_logo.png">
+		<link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+		<link rel="stylesheet" href="css/vendor/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="icon" href="images/UGA_logo.png">
 
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="js/vendor/bootstrap.min.js"></script>
-<script src="js/index.js"></script>
+		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="js/vendor/bootstrap.min.js"></script>
+		<script src="js/index.js"></script>
 
-</head>
+	</head>
 <body>
+	<div id="fb-root"></div>
+	<script>
+		(function(d, s, id) {
+  			var js, fjs = d.getElementsByTagName(s)[0];
+  			if (d.getElementById(id)) return;
+  			js = d.createElement(s); js.id = id;
+  			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+
+
 	<div class="container main" id="main">
 		<p id="ugaWon" class="ugaWon">YES</p>
 		<p id="ugaLost" class="ugaLost">NO</p>
 		<h3>
-			<a id="score" href="">Score should go here</a>
+			<a id="score" href=""></a>
 		</h3>
 		<p></p>
 		<div id="social" class="social">
-
+			<div class="fb-like" data-href="http://didugawin.com" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 		</div>
 	</div>
 </body>
