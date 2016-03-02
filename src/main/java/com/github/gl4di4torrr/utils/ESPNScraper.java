@@ -20,11 +20,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ESPNScraper {
-    //Football
-    //private static final String espnUGA = "http://espn.go.com/college-football/team/schedule/_/id/61";
-    // Basketball
-    private static final String espnUGA = "http://espn.go.com/mens-college-basketball/team/schedule/_/id/61";
-    private static final String espnScorePrefix = "http://espn.go.com";
+
     private URLConnection conn;
     private String html = "";
     private String inputLine;
@@ -35,7 +31,7 @@ public class ESPNScraper {
 
     public UgaWins lastSeasonGameOutcome() throws IOException {
         try {
-            conn = openConnection(espnUGA);
+            conn = openConnection(Constants.UGA_BASKETBALL);
             Document doc = getDocumentFromConnection(conn);
             // open the stream and put it into BufferedReader
 
@@ -63,7 +59,7 @@ public class ESPNScraper {
                     Element scoreLinkObj = elem.getElementsByClass("score").get(0).getElementsByTag("a").get(0).getElementsByAttribute("href").get(0)
                             .getAllElements().get(0);
                     score = scoreLinkObj.childNode(0).toString();
-                    link = espnScorePrefix + scoreLinkObj.attr("href");
+                    link = Constants.ESPN_GO_PREFIX + scoreLinkObj.attr("href");
 
                     UgaWins ugaWinsObject = new UgaWins(gameOutcome, score, link);
                     return ugaWinsObject;
