@@ -1,51 +1,10 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- 
-	Licensed to the Apache Software Foundation (ASF) under one
-	or more contributor license agreements. See the NOTICE file 
-	distributed with this work for additional information 
-	regarding copyright ownership. The ASF licenses this file 
-	to you under the Apache License, Version 2.0 (the 
-	"License"); you may not use this file except in compliance 
-	with the License. You may obtain a copy of the License at 
-	
-		http://www.apache.org/licenses/LICENSE-2.0
-		 
-	Unless required by applicable law or agreed to in writing, 
-	software distributed under the License is distributed on an 
-	"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY 
-	KIND, either express or implied. See the License for the 
-	specific language governing permissions and limitations 
-	under the License. 
--->
-<ivy-module version="2.0" 
-	xmlns:m="http://ant.apache.org/ivy/maven"  
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:e="http://ant.apache.org/ivy/extra"
-	xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
-	<info organisation="com.homedepot.${project.system}.${project.subsystem}" module="${project.name}" status="${project.status}" />
-
-	<configurations>
-		<!-- Configurations affect the classpath used for various build tasks and limit the transitivity of a dependency. -->
-		<conf name="compile" />
-		<conf name="provided" />
-		<conf name="runtime" />
-		<conf name="test" />
-		<conf name="master" />
-		<conf name="sources" />
-	</configurations>
-	
-	<dependencies defaultconf="compile" defaultconfmapping="*->default">
-		<dependency org="org.jsoup" name="jsoup" rev="1.7.2"/>
+<ivy-module version="2.0">
+    <info organisation="org.apache" module="hello-ivy"/>
+    <dependencies>
 		<dependency name="jersey-core" org="com.sun.jersey" rev="1.19"/>
 		<dependency name="jersey-server" org="com.sun.jersey" rev="1.19"/>
 		<dependency name="jersey-servlet" org="com.sun.jersey" rev="1.19"/>
 		<dependency name="jersey-json" org="com.sun.jersey" rev="1.19"/>
 		<dependency name="gson" org="com.google.code.gson" rev="2.3"/>
-		
-
-		<dependency org="com.homedepot.ta.aa.arch" name="tomcatX-grid" rev="7.+" conf="provided" >
-    		<artifact name="tomcatX-grid" ext="jar"/>
-		</dependency>
-		
-	</dependencies>
+    </dependencies>
 </ivy-module>
