@@ -31,7 +31,7 @@ public class ESPNScraper {
 
     public UgaWins lastSeasonGameOutcome() throws IOException {
         try {
-            conn = openConnection(Constants.UGA_BASKETBALL);
+            conn = openConnection(Constants.UGA_FOOTBALL);
             Document doc = getDocumentFromConnection(conn);
             // open the stream and put it into BufferedReader
 
